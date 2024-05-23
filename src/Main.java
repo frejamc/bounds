@@ -1,4 +1,3 @@
-import java.util.List;
 
 public class Main {
 
@@ -32,6 +31,7 @@ public class Main {
         }
     }
 
+    // Source: https://dl.acm.org/doi/abs/10.1145/3558535.3559791
     private static double upper(int k, double p) {
         double res = Geometric.geoCdf(k,p);
         for (int i = 1; i <= k; i++) {
@@ -44,6 +44,7 @@ public class Main {
         return res;
     }
 
+    // Source: https://dl.acm.org/doi/abs/10.1145/3558535.3559791
     private static double lower(int k, double p) {
         double res = Geometric.geoCdf(k,p);
         for (int i = 1; i <= k; i++) {
@@ -56,6 +57,7 @@ public class Main {
         return res;
     }
 
+    /* Simpler, but weaker bounds */
     private static double weakUpper(int k, double p) {
         return (2+2*Math.sqrt(p/(1-p)))*Math.pow(4*p*(1-p),k);
     }

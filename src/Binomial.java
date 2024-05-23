@@ -1,5 +1,6 @@
 public abstract class Binomial
 {
+    // Source: https://rosettacode.org/wiki/Evaluate_binomial_coefficients#Java
     private static long binCoeff(int n, int k)
     {
         if (k==0)
@@ -15,7 +16,7 @@ public abstract class Binomial
     }
 
     public static double binCdf(int j, int n, double q) {
-        float res = 0;
+        double res = 0;
         for (int l = j+1; l <= n; l++) {
             res += binPdf(l,n,q);
         }
